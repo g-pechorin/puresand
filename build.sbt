@@ -40,7 +40,7 @@ name := "puresand"
 
 //
 
-libraryDependencies += "commons-codec" % "commons-codec" % conf("commons.codec")
+libraryDependencies += "commons-codec" % "commons-codec" % conf("commons.codec") // i'm only using this for one thing - see if i can prue it
 libraryDependencies += "org.apache.commons" % "commons-compress" % conf("commons.compress")
 
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.9" % Test
