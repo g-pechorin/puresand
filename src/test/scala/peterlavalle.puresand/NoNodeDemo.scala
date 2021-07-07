@@ -7,7 +7,6 @@ import scala.sys.error
 object NoNodeDemo {
 
 	def main(args: Array[String]): Unit = {
-		import NodeJS.T._
 		//
 		//val pure =
 		//	"https://github.com/purescript/purescript/releases/download/v0.14.2/win64.tar.gz"

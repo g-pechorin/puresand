@@ -3,7 +3,6 @@ package peterlavalle.puresand
 import java.io.File
 
 import org.apache.commons.codec.digest.DigestUtils
-import peterlavalle.puresand.NodeJS.T._
 
 object TempDir {
 
@@ -16,7 +15,6 @@ object TempDir {
 		}
 
 	def cache[O](root: File = null)(act: File => O): O = {
-		import NodeJS.T._
 
 		val folder: File =
 			(if (null != root)

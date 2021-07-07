@@ -5,7 +5,6 @@ import java.util
 import java.util.zip.GZIPInputStream
 
 import org.apache.commons.compress.archivers.tar.{TarArchiveEntry, TarArchiveInputStream}
-import peterlavalle.puresand.NodeJS.T._
 
 import scala.language.postfixOps
 import scala.sys.process.{ProcessLogger, _}
@@ -79,8 +78,7 @@ object NoNode {
 
 	def extract(dump: File): Unit = {
 
-
-		{
+		val tars = {
 			os {
 				case ("windows", "amd64") =>
 					("win64.tar.gz", "Windows.tar.gz")
@@ -107,7 +105,9 @@ object NoNode {
 					)
 
 			}
-		}.foreach {
+		}
+
+		tars.foreach {
 			case (tar, fix) =>
 				val file: File = dump / tar.hashString
 
