@@ -137,7 +137,7 @@ object NoNode {
 									file.EnsureParent
 								)
 							out.write(
-								tarStream.readNBytes(entry.getSize.toInt)
+								tarStream.fill(entry.getSize.toInt)
 							)
 							out.close()
 

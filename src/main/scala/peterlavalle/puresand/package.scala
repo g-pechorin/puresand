@@ -9,7 +9,6 @@ import scala.reflect.ClassTag
 package object puresand {
 
 
-
 	def os[O: ClassTag](act: (String, String) => O): O = {
 		act(
 			System.getProperty("os.name").takeWhile(' ' != (_: Char)).toLowerCase(),
@@ -27,6 +26,27 @@ package object puresand {
 		}
 
 		def hashString: String = Integer.toHexString(Math.abs(text.hashCode))
+	}
+
+	implicit class extendInputStream[I <: InputStream](inputStream: I) {
+		def fill(i: Int): Array[Byte] = {
+			val buf: Array[Byte] = Array.ofDim[Byte](i)
+			fill(buf)
+			buf
+		}
+
+		def fill(buf: Array[Byte], off: Int = 0): Unit = {
+
+			val len: Int = buf.length
+			inputStream.read(buf, off, len - off) match {
+				case read =>
+					val sum = read + off
+					require(sum <= len)
+					if (sum != len)
+						fill(buf, sum)
+			}
+
+		}
 	}
 
 	implicit class extendFile(file: File) {
