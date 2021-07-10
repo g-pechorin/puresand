@@ -2,6 +2,7 @@ package peterlavalle
 
 import java.io._
 
+import scala.annotation.tailrec
 import scala.language.postfixOps
 import scala.reflect.ClassTag
 
@@ -35,12 +36,15 @@ package object puresand {
 			buf
 		}
 
-		def fill(buf: Array[Byte], off: Int = 0): Unit = {
+		@tailrec
+		final def fill(buf: Array[Byte], off: Int = 0): Unit = {
 
 			val len: Int = buf.length
 			inputStream.read(buf, off, len - off) match {
-				case read =>
-					val sum = read + off
+				case oops if oops < 0 =>
+					sys.error("read = " + oops + s"\n\t ... after $off of $len")
+				case got: Int =>
+					val sum = got + off
 					require(sum <= len)
 					if (sum != len)
 						fill(buf, sum)

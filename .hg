@@ -2,14 +2,14 @@ g4tput
 bookmarks:
 branch: gitlab
 date:
-	-1625919131
+	-1625924559
 	--3600
-desc: "should \"fix\" the \"problem\" with readNBytes"
-node: 93c9b06e26959181b43fe33b5eea5dc25b137f95
+desc: "fixies the need for tailrec"
+node: 43a5a5602ff7c399c60cc03e6cf4192055c261e7
 parents:
-	-e2c6c3a75e694fde63e25f3066cf44ed19e64920
+	-93c9b06e26959181b43fe33b5eea5dc25b137f95
 phase: draft
-rev: 11993
+rev: 11994
 tags:
 	-tip
 user: "Peter LaValle <peter.lavalle@gmail.com>"
