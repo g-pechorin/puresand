@@ -94,7 +94,11 @@ object Extract {
 					dump / "spago"
 			}
 
-		// this might fail on Windows ... it works for me because I'm using cmder and opening stuff with start
+		println("we are in:" + dump.AbsolutePath)
+
+		// this might fail on Windows
+		// ... it works for me because I'm using cmder and opening stuff with start
+		// ... it might work for you because you have mingw/cygwin/git installed
 		Process("ls -la", dump).!!
 			.split("[\r \t]*\n")
 			.map("on spago extract > " + _)
@@ -102,6 +106,11 @@ object Extract {
 
 		assume(spago.isFile, "assumed that spago file would exist")
 		require(spago.canExecute, "spago file must be executable")
+
+		Process(Seq(spago.AbsolutePath, "-v"), dump).!!
+			.split("[\r \t]*\n")
+			.map("on spago extract > " + _)
+			.foreach(println)
 
 		spago
 	}

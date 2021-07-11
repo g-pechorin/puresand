@@ -2,14 +2,14 @@ g4tput
 bookmarks:
 branch: gitlab
 date:
-	-1626013289
+	-1626014426
 	--3600
-desc: "peeled extract out and added some verbose diagnostic stuff to try and workout what's up with the/a CI"
-node: 4e444e6b5c36b3d3724e650d86899659fd084e15
+desc: "tweak extract"
+node: dc8285b6a81e12434ef056463689c9906c0f7cea
 parents:
-	-43a5a5602ff7c399c60cc03e6cf4192055c261e7
+	-4e444e6b5c36b3d3724e650d86899659fd084e15
 phase: draft
-rev: 11995
+rev: 11996
 tags:
 	-tip
 user: "Peter LaValle <peter.lavalle@gmail.com>"
