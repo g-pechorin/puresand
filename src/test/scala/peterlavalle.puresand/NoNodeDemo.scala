@@ -1,6 +1,5 @@
 package peterlavalle.puresand
 
-import peterlavalle.puresand.NoNode.extract
 
 import scala.sys.error
 
@@ -17,7 +16,7 @@ object NoNodeDemo {
 
 		val dump = "target" / "nonode"
 
-		extract(dump)
+		Extract(dump)
 		error("did i do it?")
 	}
 

@@ -2,14 +2,14 @@ g4tput
 bookmarks:
 branch: gitlab
 date:
-	-1625924559
+	-1626013289
 	--3600
-desc: "fixies the need for tailrec"
-node: 43a5a5602ff7c399c60cc03e6cf4192055c261e7
+desc: "peeled extract out and added some verbose diagnostic stuff to try and workout what's up with the/a CI"
+node: 4e444e6b5c36b3d3724e650d86899659fd084e15
 parents:
-	-93c9b06e26959181b43fe33b5eea5dc25b137f95
+	-43a5a5602ff7c399c60cc03e6cf4192055c261e7
 phase: draft
-rev: 11994
+rev: 11995
 tags:
 	-tip
 user: "Peter LaValle <peter.lavalle@gmail.com>"
