@@ -1,10 +1,7 @@
 package peterlavalle.puresand
 
-import java.io.{FileInputStream, FileOutputStream, _}
+import java.io._
 import java.util
-import java.util.zip.GZIPInputStream
-
-import org.apache.commons.compress.archivers.tar.{TarArchiveEntry, TarArchiveInputStream}
 
 import scala.language.postfixOps
 import scala.sys.process.{ProcessLogger, _}
@@ -56,7 +53,7 @@ object NoNode {
 						val process: ProcessBuilder =
 							Process(
 								// build the spago command
-								command = spago.getAbsolutePath :: cmd :: args.toList,
+								command = spago.getAbsolutePath :: "-v" :: cmd :: args.toList,
 
 								// workout where to run
 								cwd =

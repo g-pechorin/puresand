@@ -107,11 +107,6 @@ object Extract {
 		assume(spago.isFile, "assumed that spago file would exist")
 		require(spago.canExecute, "spago file must be executable")
 
-		Process(Seq(spago.AbsolutePath, "-v"), dump).!!
-			.split("[\r \t]*\n")
-			.map("on spago extract > " + _)
-			.foreach(println)
-
 		spago
 	}
 

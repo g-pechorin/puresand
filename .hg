@@ -2,14 +2,14 @@ g4tput
 bookmarks:
 branch: gitlab
 date:
-	-1626014426
+	-1626015888
 	--3600
-desc: "tweak extract"
-node: dc8285b6a81e12434ef056463689c9906c0f7cea
+desc: "big long and i'm out for today"
+node: d2e97a58a8e3d29a355d90b73e19a625cb914a43
 parents:
-	-4e444e6b5c36b3d3724e650d86899659fd084e15
+	-dc8285b6a81e12434ef056463689c9906c0f7cea
 phase: draft
-rev: 11996
+rev: 11997
 tags:
 	-tip
 user: "Peter LaValle <peter.lavalle@gmail.com>"
